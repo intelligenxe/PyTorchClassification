@@ -1,4 +1,4 @@
-# Import dependencies
+# Import dependencies (all you need to pip install is torch torchvision)
 import torch 
 from PIL import Image
 from torch import nn, save, load
