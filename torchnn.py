@@ -10,7 +10,7 @@ from torchvision.transforms import ToTensor
 # Get data 
 train = datasets.MNIST(root="data", download=True, train=True, transform=ToTensor())
 dataset = DataLoader(train, 32)
-#1,28,28 - classes 0-9
+#1,28,28 (dimentions of images from MNIST) - classes 0-9
 
 # Image Classifier Neural Network
 class ImageClassifier(nn.Module): 
@@ -32,7 +32,7 @@ class ImageClassifier(nn.Module):
 
 # Instance of the neural network, loss, optimizer 
 clf = ImageClassifier().to('cuda')
-opt = Adam(clf.parameters(), lr=1e-3)
+opt = Adam(clf.parameters(), lr=1e-3) # lr is the learning rate
 loss_fn = nn.CrossEntropyLoss() 
 
 # Training flow 
